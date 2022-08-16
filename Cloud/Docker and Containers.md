@@ -31,3 +31,5 @@ To check if there are any exited containers:<br/>
 `docker ps -a`<br/>
 For now both the above commands would return no values.<br/>
 
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/93929892/184942280-a9f7f562-8a0b-48ed-bd4a-d4af1f663154.png">
+
