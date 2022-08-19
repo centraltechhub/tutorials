@@ -148,3 +148,33 @@ http:// 9.199.144.167:9080/sample/hello.jsp
 Following output will be seen:
 
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/93929892/185535311-1a243716-ced6-44d7-ac43-ffe1f5eeb4d6.png">
+
+**Exercise 6:**
+
+The page in exercise 4 was not accessible because the port 9080 is restricted within the container. You need to map a host port to the container port. <br/>
+
+1. Save the container using the docker commit command.<br/>
+
+2. Stop the docker container using the following command:<br/>
+`docker stop <container-id>`
+
+3. Remove the container using the following command:<br/>
+`docker ps -a
+docker rm <container-id>`
+
+4. restart the docker using the following command:<br/>
+`docker run -idt -p 9080:9080 <image-name>`
+
+5. login into the docker container using docker exec command.<br/>
+`Docker exec -it <container-id> bash`
+
+6.  Navigate to /wlp/bin and execute the following command to start the server:<br/>
+`./server start AppServer`
+
+7. Hit the URL is local browser:<br/>
+http:// 9.199.144.167:9080/sample/hello.jsp
+
+Output:
+<img width="630" alt="image" src="https://user-images.githubusercontent.com/93929892/185537075-6916daba-0cf4-42de-8604-ac7d9d890c1a.png">
+
+8. Exit the container.
