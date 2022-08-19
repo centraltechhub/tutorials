@@ -77,10 +77,10 @@ First command to execute:</br>
 Followed by:</br>
 `yum install java-1.8.0-openjdk`
 run `java -version`. If installed successfully, you will see:
-
+<img width="694" alt="image" src="https://user-images.githubusercontent.com/93929892/185534463-7305def8-a941-4b51-8197-8d8b0d29ade5.png">
 
 4. Install unzip tool using the following command:<br/>
-` yum install zip`
+`yum install zip`
 
 5. Exit from the container by entering exit command.<br/>
 
