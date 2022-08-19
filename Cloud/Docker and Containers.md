@@ -62,3 +62,29 @@ If the container is up and running, you will see a similar status showing “Up�
 
 <img width="524" alt="image" src="https://user-images.githubusercontent.com/93929892/185033791-09075bdf-2c6d-4aac-aff8-2c7229cc2255.png">
 
+
+**Installing Java in the container**
+
+1. Login into the docker container using the following command:</br>
+`docker exec -it <container-id> bash`</br>
+If successful, you will be directed into the container console. </br>
+
+2. Type pwd to check the present working directory. Output should be root – “/”.</br>
+
+3. Install jdk on the local container.</br>
+First command to execute:</br>
+`yum install -y yum-utils`</br>
+Followed by:</br>
+`yum install java-1.8.0-openjdk`
+run `java -version`. If installed successfully, you will see:
+
+
+4. Install unzip tool using the following command:<br/>
+` yum install zip`
+
+5. Exit from the container by entering exit command.<br/>
+
+6. Save the docker container by executing the following command:<br/>
+`docker commit <container-id>`
+
+
