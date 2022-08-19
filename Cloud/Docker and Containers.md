@@ -94,7 +94,7 @@ https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-webProfile8 <br/>
 
 2. Copy the liberty zip, wlp-webProfile8-19.0.0.9.zip into the base centos system.<br/>
 
-3 Alternately, the liberty zip can be downloaded directly into the base system using the following curl command: <br/>
+3. Alternately, the liberty zip can be downloaded directly into the base system using the following curl command: <br/>
 `curl https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/20.0.0.7/wlp-webProfile8-20.0.0.7.zip --output wlp-webProfile8-20.0.0.7.zip`
 
 4. Copy the zip from the base OS to the container OS. Execute the following command:<br/>
@@ -115,8 +115,7 @@ You will see wlp folder present.
 
 9. navigate to /wlp/usr/servers/AppServer.
 
-10. Edit the server.xml using the vi editor.
-
+10. Edit the server.xml using the vi editor.<br/>
 Add host attribute to httpEndpoint element. Example:<br/>
 `<httpEndpoint id="defaultHttpEndpoint" host=”*”`<br/>
 Save and exit vi editor.
