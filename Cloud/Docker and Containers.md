@@ -133,12 +133,10 @@ https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/<br/>
 14. Login to the container again. 
 
 15. Navigate to /wlp/usr/servers/AppServer/dropins
-
 Execute `ls` command, you should see sample.war present. 
 
 16. Navigate to /wlp/bin and execute the following command to start the server:<br/>
-`./server start AppServer`
-
+`./server start AppServer`<br/>
 When successfully started you should see the following message in the console:<br/>
 Server AppServer started with process ID 5267.
 
