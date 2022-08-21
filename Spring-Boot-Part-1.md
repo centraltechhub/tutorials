@@ -30,7 +30,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 
 ```Java
 package custom.application;
-
 public class sample 
 {
     public String HelloWorld()
