@@ -210,14 +210,14 @@ CMD ["./execute.sh"]
 
 3. Create the server.xml file in the LabSession1 directory. The server.xml content is as follows:
 
-`<?xml version="1.0" encoding="UTF-8"?>
+```<?xml version="1.0" encoding="UTF-8"?>
 <server description="new server">
     <featureManager>
         <feature>webProfile-8.0</feature>
     </featureManager>
     <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" />
     <applicationManager autoExpand="true"/>
-</server>`
+</server>```
 
 4. You should now have the following files in the LabSession1 directory.<br/>
 
