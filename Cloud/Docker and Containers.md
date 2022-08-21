@@ -178,3 +178,59 @@ Output:
 <img width="630" alt="image" src="https://user-images.githubusercontent.com/93929892/185537075-6916daba-0cf4-42de-8604-ac7d9d890c1a.png">
 
 8. Exit the container.
+
+**Exercise 7**
+
+Now we are going to build the entire environment that we have done throughout exercise 1 to exercise 5 using a single Dockerfile.<br/>
+
+1. Update the Dockerfile as follows:
+
+`FROM centos
+RUN yum install -y yum-utils
+RUN yum install java-1.8.0-openjdk -y
+RUN yum install vim -y
+RUN yum install zip -y
+COPY ./wlp-webProfile8-20.0.0.7.zip /wlp.zip
+RUN unzip wlp.zip
+RUN cd wlp/bin \
+&& ./server create appserver
+RUN rm ./wlp/usr/servers/appserver/server.xml
+COPY ./server.xml /wlp/usr/servers/appserver/server.xml
+COPY ./sample.war /wlp/usr/servers/appserver/dropins/sample.war
+COPY ./execute.sh /execute.sh
+RUN chmod 777 -R ./execute.sh
+CMD ["./execute.sh"]
+`
+
+2. Create the execute.sh file the LabSession1 directory. The execute.sh content is as follow:
+`
+#!/bin/sh
+./wlp/bin/server start appserver
+/bin/bash`
+
+3. Create the server.xml file in the LabSession1 directory. The server.xml content is as follows:
+
+`<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+    <featureManager>
+        <feature>webProfile-8.0</feature>
+    </featureManager>
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" />
+    <applicationManager autoExpand="true"/>
+</server>`
+
+4. You should now have the following files in the LabSession1 directory.<br/>
+
+server.xml, execute.sh, Dockerfile, sample.war, wlp-webProfile8-20.0.0.7.zip
+
+5. Build the docker image. 
+
+6. Run the container
+ 
+`docker run -idt -p 9080:9080 <image-id>`
+
+7. Check the status by executing docker ps.
+
+8. Hit the URL in the browser:
+http:// 9.199.144.167:9080/sample/hello.jsp
+
