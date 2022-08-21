@@ -23,11 +23,11 @@
         </plugins>
     </build>
 </project>
-,,,
+```
 
 **Java code**
 
-'''Java
+```Java
 package custom.application;
 
 public class sample 
@@ -37,4 +37,4 @@ public class sample
         return "Hello World Jawahar";
     }    
 }
-'''
+```
