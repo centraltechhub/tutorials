@@ -237,3 +237,36 @@ server.xml, execute.sh, Dockerfile, sample.war, wlp-webProfile8-20.0.0.7.zip
 8. Hit the URL in the browser:
 http:// 9.199.144.167:9080/sample/hello.jsp
 
+**Exercise 8**
+
+Creating Docker volume to view liberty logs
+
+1. Docker container files can be copied to host machine using the docker cp command.
+`docker cp 336c881a0ec6:/wlp.zip ./wlp-webProfile8-19.0.0.9.zip`
+
+However, this will not be feasible for frequent access of the files. Docker volumes will solve this problem.
+
+2.  Create a docker volume using the following command:
+`docker volume create libertylogs`
+
+3. List the volumes
+`docker volume ls`
+
+<img width="656" alt="image" src="https://user-images.githubusercontent.com/93929892/185801251-ad75b65a-9559-49f8-9374-57b83167a8e3.png">
+
+4. Inspect the docker volume
+
+<img width="656" alt="image" src="https://user-images.githubusercontent.com/93929892/185801283-a0ccdded-55b2-496c-bf11-6e998c7db5ff.png">
+
+4.  To remove docker volume
+`docker volume rm libertylogs`
+
+5. Start the container with a volume
+
+`docker run -idt --mount source=libertylogs,target=/wlp/usr/servers/appserver/logs ec753d93981`
+
+Navigate to the volume directory and list the files
+
+<img width="649" alt="image" src="https://user-images.githubusercontent.com/93929892/185801313-60fabf8c-4ed1-412f-9a36-eddef86ad24d.png">
+
+
