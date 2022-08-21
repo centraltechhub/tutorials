@@ -185,7 +185,8 @@ Now we are going to build the entire environment that we have done throughout ex
 
 1. Update the Dockerfile as follows:
 
-`FROM centos
+```DOCKER
+FROM centos
 RUN yum install -y yum-utils
 RUN yum install java-1.8.0-openjdk -y
 RUN yum install vim -y
@@ -200,7 +201,7 @@ COPY ./sample.war /wlp/usr/servers/appserver/dropins/sample.war
 COPY ./execute.sh /execute.sh
 RUN chmod 777 -R ./execute.sh
 CMD ["./execute.sh"]
-`
+```
 
 2. Create the execute.sh file the LabSession1 directory. The execute.sh content is as follow:
 `
