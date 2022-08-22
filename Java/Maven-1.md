@@ -45,13 +45,13 @@ public class sample
 }
 ```
 
-3. Clean maven project.
+3. Clean maven project.<br/>
 `mvn clean`
 
-4. Package the maven project.
+4. Package the maven project.<br/>
 `mvn package`
 
-5. Install the maven project.
+5. Install the maven project.<br/>
 `mvn install`
 
 
