@@ -1,6 +1,9 @@
 
+1. Create a new directory called mavenproject.
 
-**POM File (pom.xml)**
+2. Create a new file called pom.xml with the following content.
+
+**pom.xml**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,6 +31,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 ```
 
 **Java code**
+
+Under maveproject directory, create the following folder structure: `/src/main/java/custom/application`. Create a java file with sample as name with the following content.
 
 ```Java
 package custom.application;
