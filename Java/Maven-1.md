@@ -44,3 +44,14 @@ public class sample
     }    
 }
 ```
+
+3. Clean maven project.
+`mvn clean`
+
+4. Package the maven project.
+`mvn package`
+
+5. Install the maven project.
+`mvn install`
+
+
