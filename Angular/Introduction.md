@@ -5,3 +5,7 @@
 **Creating a new component**
 
 `ng generate component subapp`
+
+**Starting Angular Server**
+
+`ng serve`
