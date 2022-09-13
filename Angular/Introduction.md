@@ -1,6 +1,6 @@
 **Creating a new Angular Project**
 
-`ng create angularapplication`
+`ng new angularapplication`
 
 **Creating a new component**
 
