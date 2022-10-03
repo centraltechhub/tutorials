@@ -25,7 +25,7 @@ control_files = (ora_control1, ora_control2)
 compatible ='11.2.0'
 ```
   
-Set the following environment variables.
+**Set the following environment variables.**
   
 ```  
 export ORACLE_BASE=/opt/database
@@ -37,6 +37,19 @@ alternately, the following command can be executed.
   . oraenv
 ```
   
+**Logging into the SQL console  **
+ 
+```  
+  ./sqlplus / as sysdba
+```
+```
+  create spfile from pfile;  
+```    
+```
+  startup nomount;
+  startup nomount pfile='/opt/database/software/oracle/dbs/initOMSNPR.ora'
+```  
+x`x`` 
 ```sql
 CREATE DATABASE OMSNPR USER SYS IDENTIFIED BY DevSysPass USER SYSTEM IDENTIFIED BY DevSystemPass MAXLOGFILES 5 MAXLOGHISTORY 10 MAXDATAFILES 50 CHARACTER SET US7ASCII NATIONAL CHARACTER SET AL16UTF16 DEFAULT TABLESPACE USERS DEFAULT TEMPORARY TABLESPACE TEMPTS UNDO TABLESPACE UNDOTBS;
 
