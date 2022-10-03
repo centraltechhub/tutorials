@@ -24,3 +24,20 @@ undo_tablespace='UNDOTBS1'
 control_files = (ora_control1, ora_control2)
 compatible ='11.2.0'
 ```
+  
+Set the following environment variables.
+  
+```  
+export ORACLE_BASE=/opt/database
+export ORACLE_HOME=/opt/database/software/oracle
+export ORACLE_SID=dev
+```
+alternately, the following command can be executed.
+```
+  . oraenv
+```
+  
+
+  
+  
+  
