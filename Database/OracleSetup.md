@@ -67,3 +67,6 @@ shutdown immediate;
 startup mount exclusive restrict;
 drop database;  
 ```  
+  
+<img width="843" alt="image" src="https://user-images.githubusercontent.com/93929892/193642261-092d9c22-9237-467c-9e44-d5b7fe96023b.png">
+  
