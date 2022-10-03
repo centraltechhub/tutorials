@@ -37,7 +37,7 @@ alternately, the following command can be executed.
   . oraenv
 ```
   
-**Logging into the SQL console  **
+**Logging into the SQL console.**
  
 ```  
   ./sqlplus / as sysdba
@@ -49,7 +49,7 @@ alternately, the following command can be executed.
   startup nomount;
   startup nomount pfile='/opt/database/software/oracle/dbs/initOMSNPR.ora'
 ```  
-x`x`` 
+ 
 ```sql
 CREATE DATABASE OMSNPR USER SYS IDENTIFIED BY DevSysPass USER SYSTEM IDENTIFIED BY DevSystemPass MAXLOGFILES 5 MAXLOGHISTORY 10 MAXDATAFILES 50 CHARACTER SET US7ASCII NATIONAL CHARACTER SET AL16UTF16 DEFAULT TABLESPACE USERS DEFAULT TEMPORARY TABLESPACE TEMPTS UNDO TABLESPACE UNDOTBS;
 
@@ -61,5 +61,9 @@ grant all privileges to cn_stgstats identified by password;
 grant all privileges to admin identified by password;
 ```
   
-  
-  
+**Delete DB.**
+```
+shutdown immediate;
+startup mount exclusive restrict;
+drop database;  
+```  
