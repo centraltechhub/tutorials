@@ -37,7 +37,16 @@ alternately, the following command can be executed.
   . oraenv
 ```
   
+'''sql  
+CREATE DATABASE OMSNPR USER SYS IDENTIFIED BY DevSysPass USER SYSTEM IDENTIFIED BY DevSystemPass MAXLOGFILES 5 MAXLOGHISTORY 10 MAXDATAFILES 50 CHARACTER SET US7ASCII NATIONAL CHARACTER SET AL16UTF16 DEFAULT TABLESPACE USERS DEFAULT TEMPORARY TABLESPACE TEMPTS UNDO TABLESPACE UNDOTBS;
 
+grant all privileges to cn_stgchnmaster identified by password;
+grant all privileges to cn_stgchntrans identified by password;
+grant all privileges to cn_stgconfig identified by password;
+grant all privileges to cn_stgmetadata identified by password;
+grant all privileges to cn_stgstats identified by password;
+grant all privileges to admin identified by password;
+```
   
   
   
