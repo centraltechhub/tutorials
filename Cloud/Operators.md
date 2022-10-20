@@ -59,6 +59,43 @@ Open the directory using any editor.
   
 The watches.yaml file connects the LibertyInstall resource to the libertyinstall ansible role.
 
+5. Open the roles/libertyinstall/defaults/main.yml file and update as follows.
+
+```yaml
+- name: start libertyinstall
+  kubernetes.core.k8s:
+    definition:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: '{{ ansible_operator_meta.name }}-libertyinstall'
+        namespace: '{{ ansible_operator_meta.namespace }}'
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: libertyinstall
+        template:
+          metadata:
+            labels:
+              app: libertyinstall
+          spec:
+            containers:
+            - name: libertyinstall
+              command:
+              - libertyinstall
+              - -m=64
+              - -o
+              - modern
+              - -v
+              image: "docker.io/centraltechhub/sessionwebapp:V2"
+               - name: ENV1
+                 value: {{env1}}}
+              ports:
+                - containerPort: 9080
+
+```
+
 
 
 
