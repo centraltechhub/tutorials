@@ -54,7 +54,8 @@ Open the directory using any editor.
 - version: v1alpha1
   group: cache.centraltechhub.com
   kind: LibertyInstall
-  role: libertyinstall`
+  role: libertyinstall
+`
   
 The watches.yaml file connects the LibertyInstall resource to the libertyinstall ansible role.
 
