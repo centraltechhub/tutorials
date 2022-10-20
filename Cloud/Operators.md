@@ -18,3 +18,8 @@ run the following command to check if all the relevant pods are up and running.
 2. Install Operator Lifecycle Manager
 
 `operator-sdk olm install`
+
+output:
+![image](https://user-images.githubusercontent.com/93929892/196855953-8305cdd0-a220-4a59-87c5-82ffca129732.png)
+
+Sample review of 
