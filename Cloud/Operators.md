@@ -1,3 +1,3 @@
 # **Operators**
 
-# Initialize Minikube
+**Initialize Minikube**
