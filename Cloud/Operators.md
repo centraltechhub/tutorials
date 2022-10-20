@@ -96,10 +96,30 @@ The watches.yaml file connects the LibertyInstall resource to the libertyinstall
 
 ```
 
+6. Edit the cache_v1alpha1_libertyinstall.yaml
 
+```yaml
+apiVersion: cache.centraltechhub.com/v1alpha1
+kind: LibertyInstall
+metadata:
+  name: libertyinstall-sample
+spec:
+  env1: 'Hello World'
+```
 
+7. Edit the Makefile
 
+```yaml
+Image URL to use all building/pushing image targets
+IMG ?= controller:latest
+```
+to 
+```yaml
+IMG ?= centraltechhub/operators:V1
+```
 
+8.  Building the docker images and pushing it to the respository
 
+Ensure to save all the files. Execute the following command from the project directory.
 
-
+`make docker-build docker-push`
