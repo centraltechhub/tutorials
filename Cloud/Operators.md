@@ -123,3 +123,10 @@ IMG ?= centraltechhub/operators:V1
 Ensure to save all the files. Execute the following command from the project directory.
 
 `make docker-build docker-push`
+
+If the build is successful, you will be able to see the image present in the docker repository.
+
+<img width="731" alt="image" src="https://user-images.githubusercontent.com/93929892/196863069-4d8bd143-4017-447f-8513-efd9cdff898b.png">
+
+
+
