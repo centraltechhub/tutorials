@@ -2,7 +2,7 @@
 
 **Initialize Minikube**
 
-1. Create a new minikube instance with 4GB memry and 3 CPUs.
+1. Create a new minikube instance with 4GB memory and 3 CPUs.
 
 `minikube start --memory 4096 cpus 3`
 
@@ -15,3 +15,6 @@ run the following command to check if all the relevant pods are up and running.
 
 ![image](https://user-images.githubusercontent.com/93929892/196855249-94e1e9fc-e528-4b48-922a-4b6688309fdf.png)
 
+2. Install Operator Lifecycle Manager
+
+`operator-sdk olm install`
