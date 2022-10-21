@@ -62,33 +62,32 @@ The watches.yaml file connects the LibertyAppOperator resource to the libertyapp
 5. Open the roles/libertyappoperator/tasks/main.yml file and update as follows.
 
 ```yaml
----
-    # tasks file for LibertyAppOperator
-    - name: start libertyappoperator
-      kubernetes.core.k8s:
-        definition:
-             kind: Deployment
-          apiVersion: apps/v1
+- name: start libertyappoperator
+  kubernetes.core.k8s:
+    definition:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: webapp-deployment
+        namespace: default
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: webapp
+        template:
           metadata:
-            name: webapp-deployment
+            labels:
+              app: webapp
           spec:
-            replicas: 1
-            selector:
-              matchLabels:
-                app: webapp
-            template:
-              metadata:
-                labels:
-                  app: webapp
-              spec:
-                containers:
-                - name: webapp
-                  image: "docker.io/centraltechhub/sessionwebapp:V2"
-                  env:
-                   - name: ENV1
-                     value: "{{env1}}}"
-                  ports:
-                    - containerPort: 9080
+            containers:
+            - name: webapp
+              image: "docker.io/centraltechhub/sessionwebapp:V2"
+              env:
+                - name: ENV1
+                  value: "{{env1}}"
+              ports:
+                - containerPort: 9080
 ```
 
 6. Edit the cache_v1alpha1_libertyinstall.yaml
