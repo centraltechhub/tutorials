@@ -13,13 +13,17 @@ output:
 
 run the following command to check if all the relevant pods are up and running.
 
-`kubectl get pods --all-namespaces`
+```CMD
+kubectl get pods --all-namespaces
+```
 
 ![image](https://user-images.githubusercontent.com/93929892/196855249-94e1e9fc-e528-4b48-922a-4b6688309fdf.png)
 
 2. Install Operator Lifecycle Manager
-
-`operator-sdk olm install`
+3. 
+```CMD
+operator-sdk olm install
+```
 
 output:
 ![image](https://user-images.githubusercontent.com/93929892/196855953-8305cdd0-a220-4a59-87c5-82ffca129732.png)
@@ -30,9 +34,11 @@ Sample review of a particular kind.
 
 3. Create a new Operator project.
 
-`mkdir libertyapp-operator`
-`cd libertyapp-operator`
-`operator-sdk init --plugins=ansible --domain hub.docker.com`
+```CMD
+mkdir libertyapp-operator
+`cd libertyapp-operator
+operator-sdk init --plugins=ansible --domain hub.docker.com
+```
 
 output:
 ![image](https://user-images.githubusercontent.com/93929892/196857036-f68cda14-6f65-46e2-b9c2-64eb5b43d9ee.png)
@@ -41,7 +47,9 @@ The initialization command will create the neccessary template and artifacts und
 
 Create a LibertyApp API.
 
-`operator-sdk create api --group cache --version v1alpha1 --kind LibertyAppOperator --generate-role`
+```CMD
+operator-sdk create api --group cache --version v1alpha1 --kind LibertyAppOperator --generate-role
+```
 
 output:
 ![image](https://user-images.githubusercontent.com/93929892/196858296-61d700d3-78fa-47b2-85cc-d1fee5ac2f3d.png)
@@ -118,7 +126,9 @@ IMG ?= centraltechhub/operators:V1
 
 Ensure to save all the files. Execute the following command from the project directory.
 
-`make docker-build docker-push`
+```CMD
+make docker-build docker-push
+```
 
 If the build is successful, you will be able to see the image present in the docker repository.
 
