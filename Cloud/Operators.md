@@ -20,7 +20,7 @@ kubectl get pods --all-namespaces
 ![image](https://user-images.githubusercontent.com/93929892/196855249-94e1e9fc-e528-4b48-922a-4b6688309fdf.png)
 
 2. Install Operator Lifecycle Manager
-3. 
+
 ```CMD
 operator-sdk olm install
 ```
@@ -36,7 +36,11 @@ Sample review of a particular kind.
 
 ```CMD
 mkdir libertyapp-operator
-`cd libertyapp-operator
+```
+```CMD
+cd libertyapp-operator
+```
+```CMD
 operator-sdk init --plugins=ansible --domain hub.docker.com
 ```
 
