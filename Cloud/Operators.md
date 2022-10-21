@@ -36,9 +36,7 @@ Sample review of a particular kind.
 
 ```CMD
 mkdir libertyapp-operator \n
-cd libertyapp-operator
-```
-```CMD
+cd libertyapp-operator \n
 operator-sdk init --plugins=ansible --domain hub.docker.com
 ```
 
