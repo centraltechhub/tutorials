@@ -4,7 +4,9 @@
 
 1. Create a new minikube instance with 4GB memory and 2 CPUs.
 
-`minikube start --memory 4096 cpus 2`
+```CMD
+minikube start --memory 4096 cpus 2
+```
 
 output:
 ![image](https://user-images.githubusercontent.com/93929892/196854997-6a5dea30-38b2-414b-80ed-45309ec04416.png)
