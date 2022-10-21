@@ -28,18 +28,18 @@ Sample review of a particular kind.
 
 3. Create a new Operator project.
 
-`mkdir liberty-operator`
-`cd liberty-operator`
-`operator-sdk init --plugins=ansible --domain centraltechhub.com`
+`mkdir libertyapp-operator`
+`cd libertyapp-operator`
+`operator-sdk init --plugins=ansible --domain hub.docker.com`
 
 output:
 ![image](https://user-images.githubusercontent.com/93929892/196857036-f68cda14-6f65-46e2-b9c2-64eb5b43d9ee.png)
 
 The initialization command will create the neccessary template and artifacts under the liberty-operator directory. 
 
-Create a LibertyInstall API.
+Create a LibertyApp API.
 
-`operator-sdk create api --group cache --version v1alpha1 --kind LibertyInstall --generate-role`
+`operator-sdk create api --group cache --version v1alpha1 --kind LibertyAppOperator --generate-role`
 
 output:
 ![image](https://user-images.githubusercontent.com/93929892/196858296-61d700d3-78fa-47b2-85cc-d1fee5ac2f3d.png)
@@ -57,12 +57,12 @@ Open the directory using any editor.
   role: libertyinstall
 ```
   
-The watches.yaml file connects the LibertyInstall resource to the libertyinstall ansible role.
+The watches.yaml file connects the LibertyAppOperator resource to the libertyappoperator ansible role.
 
-5. Open the roles/libertyinstall/defaults/main.yml file and update as follows.
+5. Open the roles/libertyappoperator/tasks/main.yml file and update as follows.
 
 ```yaml
-- name: start libertyinstall
+- name: start libertyappoperator
   kubernetes.core.k8s:
     definition:
       kind: Deployment
@@ -74,37 +74,37 @@ The watches.yaml file connects the LibertyInstall resource to the libertyinstall
         replicas: 1
         selector:
           matchLabels:
-            app: libertyinstall
+            app: libertyappoperator
         template:
           metadata:
             labels:
-              app: libertyinstall
+              app: libertyappoperator
           spec:
             containers:
-            - name: libertyinstall
+            - name: libertyappoperator
               command:
-              - libertyinstall
+              - libertyappoperator
               - -m=64
               - -o
               - modern
               - -v
               image: "docker.io/centraltechhub/sessionwebapp:V2"
+              env:
                - name: ENV1
-                 value: {{env1}}}
+                 value: "{{env1}}}"
               ports:
                 - containerPort: 9080
-
 ```
 
 6. Edit the cache_v1alpha1_libertyinstall.yaml
 
 ```yaml
-apiVersion: cache.centraltechhub.com/v1alpha1
-kind: LibertyInstall
+apiVersion: cache.hub.docker.com/v1alpha1
+kind: LibertyAppOperator
 metadata:
-  name: libertyinstall-sample
+  name: libertyappoperator-sample
 spec:
-  env1: 'Hello World'
+  env1: "Hello World"
 ```
 
 7. Edit the Makefile
