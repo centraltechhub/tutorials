@@ -11,7 +11,7 @@ output:
 
 run the following command to check if all the relevant pods are up and running.
 
-`kubectl get pods --all-namespace`
+`kubectl get pods --all-namespaces`
 
 ![image](https://user-images.githubusercontent.com/93929892/196855249-94e1e9fc-e528-4b48-922a-4b6688309fdf.png)
 
