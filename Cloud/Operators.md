@@ -2,7 +2,7 @@
 
 **Initialize Minikube**
 
-1. Create a new minikube instance with 4GB memory and 3 CPUs.
+1. Create a new minikube instance with 4GB memory and 2 CPUs.
 
 `minikube start --memory 4096 cpus 3`
 
