@@ -35,9 +35,7 @@ Sample review of a particular kind.
 3. Create a new Operator project.
 
 ```CMD
-mkdir libertyapp-operator
-```
-```CMD
+mkdir libertyapp-operator \n
 cd libertyapp-operator
 ```
 ```CMD
