@@ -35,8 +35,8 @@ Sample review of a particular kind.
 3. Create a new Operator project.
 
 ```CMD
-mkdir libertyapp-operator \n
-cd libertyapp-operator \n
+mkdir libertyapp-operator  
+cd libertyapp-operator  
 operator-sdk init --plugins=ansible --domain hub.docker.com
 ```
 
