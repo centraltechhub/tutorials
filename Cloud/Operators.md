@@ -72,7 +72,7 @@ The watches.yaml file connects the LibertyAppOperator resource to the libertyapp
 5. Open the roles/libertyappoperator/tasks/main.yml file and update as follows.
 
 ```yaml
-- name: start libertyappoperator
+- name: start libertyappoperator app
   kubernetes.core.k8s:
     definition:
       kind: Deployment
@@ -98,6 +98,25 @@ The watches.yaml file connects the LibertyAppOperator resource to the libertyapp
                   value: "{{env1}}"
               ports:
                 - containerPort: 9080
+
+- name: start libertyappoperator service
+  kubernetes.core.k8s:
+    definition:
+      kind: Service
+      apiVersion: v1
+      metadata:
+        name: webapp-deployment
+        namespace: default
+      spec:
+        selector:
+          app: webapp
+        ports:
+          - protocol: TCP
+            port: 80
+            targetPort: 9080
+            nodePort: 30000
+        type: LoadBalancer
+
 ```
 
 6. Edit the cache_v1alpha1_libertyinstall.yaml
