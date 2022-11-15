@@ -103,7 +103,7 @@ The watches.yaml file connects the LibertyAppOperator resource to the libertyapp
   kubernetes.core.k8s:
     definition:
       kind: Service
-      apiVersion: v1
+      apiVersion: apps/v1
       metadata:
         name: webapp-deployment
         namespace: default
