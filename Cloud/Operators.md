@@ -7,6 +7,7 @@ This lab exercise is performed on Macbook. As prerequisite docker is already ins
 
 1. Create a new minikube instance with 4GB memory and 2 CPUs.
 
+Execute the following command:
 ```CMD
 minikube start --memory 4096 cpus 2
 ```
@@ -15,7 +16,6 @@ output:
 ![image](https://user-images.githubusercontent.com/93929892/196854997-6a5dea30-38b2-414b-80ed-45309ec04416.png)
 
 run the following command to check if all the relevant pods are up and running.
-
 ```CMD
 kubectl get pods --all-namespaces
 ```
@@ -26,6 +26,7 @@ kubectl get pods --all-namespaces
 
 Operator Lifecycle Manage (OLM) is a component of the Operator Framework, an open source toolkit to manage Operators, in a streamlined and scalable way.
 
+Execute the following command:
 ```CMD
 operator-sdk olm install
 ```
@@ -39,6 +40,7 @@ Sample review of a particular kind.
 
 3. Create a new Operator project.
 
+Execute the following command:
 ```CMD
 mkdir libertyapp-operator  
 cd libertyapp-operator  
@@ -52,6 +54,7 @@ The initialization command will create the neccessary template and artifacts und
 
 Create a LibertyApp API.
 
+Execute the following command:
 ```CMD
 operator-sdk create api --group cache --version v1alpha1 --kind LibertyAppOperator --generate-role
 ```
