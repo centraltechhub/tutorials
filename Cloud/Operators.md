@@ -24,7 +24,7 @@ kubectl get pods --all-namespaces
 
 2. Install Operator Lifecycle Manager
 
-This project is a component of the Operator Framework, an open source toolkit to manage Kubernetes native applications, called Operators, in a streamlined and scalable way.
+Operator Lifecycle Manage (OLM) is a component of the Operator Framework, an open source toolkit to manage Operators, in a streamlined and scalable way.
 
 ```CMD
 operator-sdk olm install
