@@ -2,6 +2,9 @@
 
 **Initialize Minikube**
 
+This lab exercise is performed on Macbook. As prerequisite docker is already installed. Operators are software extension to Kubernetes that make use of custom resources to manage applications and their components. We will install minikube to mimic Kubernetes environment to install and test our operator. Helm, Ansible or Go can be used as Operator SDK. We will use Ansible in this tutorial.
+
+
 1. Create a new minikube instance with 4GB memory and 2 CPUs.
 
 ```CMD
