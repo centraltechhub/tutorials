@@ -2,7 +2,7 @@
 
 **Initialize Minikube**
 
-This lab exercise is performed on Macbook. As prerequisite docker is already installed. Operators are software extension to Kubernetes that make use of custom resources to manage applications and their components. We will install minikube to mimic Kubernetes environment to install and test our operator. Helm, Ansible or Go can be used as Operator SDK. We will use Ansible in this tutorial.
+This lab exercise was performed on Macbook. As prerequisite docker is already installed. Operators are software extension to Kubernetes that make use of custom resources to manage applications and their components. We will install minikube to mimic Kubernetes environment to install and test our operator. Helm, Ansible or Go can be used as Operator SDK. We will use Ansible in this tutorial.
 
 
 1. Create a new minikube instance with 4GB memory and 2 CPUs.
@@ -161,5 +161,30 @@ If the build is successful, you will be able to see the image present in the doc
 
 <img width="731" alt="image" src="https://user-images.githubusercontent.com/93929892/196863069-4d8bd143-4017-447f-8513-efd9cdff898b.png">
 
+9. Generate the operator install yaml file. 
 
+Navigate to ../ibertyapp-operator/config/default
+Execute the following command:
 
+```CMD
+kubectl kustomize . > libertyapp-opertor-install.yaml
+```
+
+The ibertyapp-opertor-install.yaml will be generated in the ../ibertyapp-operator/config/default directory. Open it and review.
+
+Modify the following:
+image: controller:latest to
+
+Under the first kind: ClusterRole, 
+- apiGroups:
+  - apps
+add services to resources list:
+
+resources:
+  - deployments
+  - daemonsets
+  - replicasets
+  - statefulsets
+  - services
+
+save the file and exit.
