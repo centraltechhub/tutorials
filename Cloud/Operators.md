@@ -188,3 +188,37 @@ resources:
   - services
 
 save the file and exit.
+
+10. Install the operator.
+
+navigate to the operator root directory and execute the following command:
+
+```CMD
+kubectl create -f config/default/libertyapp-opertor-install.yaml
+make deploy
+```
+
+check if the operator is running.
+
+![image](https://user-images.githubusercontent.com/93929892/204195415-718c9876-ac3b-4c58-92f5-f6bd05de190a.png)
+
+11. Install the sessionwebapp application.
+
+Modify cache_v1alpha1_libertyappoperator.yaml
+
+```YAML
+apiVersion: cache.hub.docker.com/v1alpha1
+kind: LibertyAppOperator
+metadata:
+  name: libertyappoperator-sample
+spec:
+  env1: "TestEnvironmentVar1"
+
+```
+
+Execute the following command:
+
+```CMD
+kubectl create -f config/samples/cache_v1alpha1_libertyappoperator.yaml
+make install
+```
