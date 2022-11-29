@@ -167,7 +167,7 @@ Navigate to ../ibertyapp-operator/config/default
 Execute the following command:
 
 ```CMD
-kubectl kustomize config/default/ > libertyapp-opertor-install.yaml
+kubectl kustomize config/default/ > config/default/libertyapp-opertor-install.yaml
 ```
 
 The ibertyapp-opertor-install.yaml will be generated in the ../ibertyapp-operator/config/default directory. Open it and review.
