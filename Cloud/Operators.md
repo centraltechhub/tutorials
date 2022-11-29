@@ -220,5 +220,5 @@ Execute the following command:
 
 ```CMD
 kubectl create -f config/samples/cache_v1alpha1_libertyappoperator.yaml
-make install
+make deploy
 ```
