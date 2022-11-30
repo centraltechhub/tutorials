@@ -202,7 +202,7 @@ rules:
       - watch
 ```
 
-8.  Building the docker images and pushing it to the respository
+9.  Building the docker images and pushing it to the respository
 
 Ensure to save all the files. Execute the following command from the project directory.
 
@@ -214,9 +214,8 @@ If the build is successful, you will be able to see the image present in the doc
 
 ![image](https://user-images.githubusercontent.com/93929892/204740313-439a161c-346e-4fc3-b06a-9067efcdc545.png)
 
-9. Generate the operator install yaml file. 
+10. Generate the operator install yaml file. 
 
-Navigate to ../ibertyapp-operator/config/default
 Execute the following command:
 
 ```CMD
@@ -228,50 +227,33 @@ The sessionwebappoperator-install.yaml will be generated in the sessionwebapp-op
 Modify the following:
 image: controller:latest to
 
-Under the first kind: ClusterRole, 
-- apiGroups:
-  - apps
-add services to resources list:
-
-resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  - services
+```yaml
+image: centraltechhub/operators:v1
+```
 
 save the file and exit.
 
-10. Install the operator.
+11. Install the operator.
 
-navigate to the operator root directory and execute the following command:
+Navigate to the operator root directory and execute the following command:
 
 ```CMD
-kubectl create -f config/default/libertyapp-opertor-install.yaml
-make deploy
+kubectl create -f config/default/sessionwebappoperator-install.yaml
 ```
+
+output:
+<img width="1284" alt="image" src="https://user-images.githubusercontent.com/93929892/204741972-fc70d2f6-e906-48d5-88de-ee8f8a47e0bd.png">
+
 
 check if the operator is running.
 
-![image](https://user-images.githubusercontent.com/93929892/204195415-718c9876-ac3b-4c58-92f5-f6bd05de190a.png)
+<img width="1534" alt="image" src="https://user-images.githubusercontent.com/93929892/204742157-dacc8d3d-ae88-4f30-9ae8-b8e64bbd6f39.png">
 
-11. Install the sessionwebapp application.
 
-Modify cache_v1alpha1_libertyappoperator.yaml
-
-```YAML
-apiVersion: cache.hub.docker.com/v1alpha1
-kind: LibertyAppOperator
-metadata:
-  name: libertyappoperator-sample
-spec:
-  env1: "TestEnvironmentVar1"
-
-```
+12. Install the sessionwebapp application.
 
 Execute the following command:
 
 ```CMD
-kubectl create -f config/samples/cache_v1alpha1_libertyappoperator.yaml
-make deploy
+kubectl create -f config/samples/cache_v1alpha1_sessionwebappoperator.yaml
 ```
