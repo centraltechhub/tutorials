@@ -1,7 +1,5 @@
 # **Operators**
 
-**Initialize Minikube**
-
 **Note:**
 * This lab exercise was performed on Macbook. 
 * As prerequisite Docker is already installed.
