@@ -11,7 +11,7 @@
  
 
 
-1. Create a new minikube instance with 4GB memory and 2 CPUs.
+**1. Create a new minikube instance with 4GB memory and 2 CPUs.**
 
 Execute the following command:
 ```CMD
