@@ -123,7 +123,7 @@ Open the roles/sessionwebappoperator/tasks/main.yml file and update as follows.
   kubernetes.core.k8s:
     definition:
       kind: Service
-      apiVersion: apps/v1
+      apiVersion: v1
       metadata:
         name: webapp-deployment
         namespace: default
