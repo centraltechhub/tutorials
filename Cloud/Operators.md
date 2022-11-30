@@ -155,7 +155,7 @@ IMG ?= controller:latest
 ```
 to 
 ```yaml
-IMG ?= centraltechhub/operators:v1
+IMG ?= centraltechhub/operators:v1 # Replace this value with the relevant docker repository and version
 ```
 
 8.  Building the docker images and pushing it to the respository
