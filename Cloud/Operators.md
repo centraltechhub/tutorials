@@ -212,7 +212,7 @@ make docker-build docker-push
 
 If the build is successful, you will be able to see the image present in the docker repository.
 
-<img width="731" alt="image" src="https://user-images.githubusercontent.com/93929892/196863069-4d8bd143-4017-447f-8513-efd9cdff898b.png">
+![image](https://user-images.githubusercontent.com/93929892/204740313-439a161c-346e-4fc3-b06a-9067efcdc545.png)
 
 9. Generate the operator install yaml file. 
 
@@ -220,10 +220,10 @@ Navigate to ../ibertyapp-operator/config/default
 Execute the following command:
 
 ```CMD
-kubectl kustomize config/default/ > config/default/libertyapp-opertor-install.yaml
+kubectl kustomize config/default/ > config/default/sessionwebappoperator-install.yaml
 ```
 
-The ibertyapp-opertor-install.yaml will be generated in the ../ibertyapp-operator/config/default directory. Open it and review.
+The sessionwebappoperator-install.yaml will be generated in the sessionwebapp-operator/config/default directory. Open it and review.
 
 Modify the following:
 image: controller:latest to
