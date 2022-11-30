@@ -250,10 +250,32 @@ check if the operator is running.
 <img width="1534" alt="image" src="https://user-images.githubusercontent.com/93929892/204742157-dacc8d3d-ae88-4f30-9ae8-b8e64bbd6f39.png">
 
 
-12. Install the sessionwebapp application.
+12. Install the sessionwebapp application container.
 
 Execute the following command:
 
 ```CMD
 kubectl create -f config/samples/cache_v1alpha1_sessionwebappoperator.yaml
 ```
+Check if both the pod and service is deployed sucessfully.
+
+<img width="1558" alt="image" src="https://user-images.githubusercontent.com/93929892/204755444-5e7b4bff-2d14-44ba-9370-6a3cc6314f12.png">
+
+13. Start Minikube tunnel
+
+In a new command prompt, execute
+
+```CMD
+minikube tunnel
+```
+
+Post which external-ip will be assigned to the service.
+
+<img width="1571" alt="image" src="https://user-images.githubusercontent.com/93929892/204756027-69792a88-0619-4105-9373-852b5eac6c13.png">
+
+14. Open browser and navigate http://localhost/sessionwebapp/ServerDetails.html
+
+![image](https://user-images.githubusercontent.com/93929892/204756370-e46d2b45-6072-4edf-9ce8-d482ec7faef7.png)
+
+End
+
