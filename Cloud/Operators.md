@@ -28,7 +28,7 @@ kubectl get pods --all-namespaces
 
 ![image](https://user-images.githubusercontent.com/93929892/196855249-94e1e9fc-e528-4b48-922a-4b6688309fdf.png)
 
-2. Install Operator Lifecycle Manager
+**2. Install Operator Lifecycle Manager**
 
 Operator Lifecycle Manage (OLM) is a component of the Operator Framework, an open source toolkit to manage Operators, in a streamlined and scalable way.
 
@@ -44,7 +44,7 @@ Sample review of a particular kind.
 
 ![image](https://user-images.githubusercontent.com/93929892/196856651-c7a2596b-de87-472b-97a8-259e6c87ee12.png)
 
-3. Create a new Operator project.
+**3. Create a new Operator project.**
 
 Execute the following command:
 ```CMD
@@ -75,7 +75,7 @@ Open the directory using any editor.
 <img width="338" alt="image" src="https://user-images.githubusercontent.com/93929892/204735036-9ce0356a-af63-4e3a-93bf-0c7cbf342948.png">
 
 
-4. Reviewing the watches.yaml
+**4. Reviewing the watches.yaml**
 
 ```yaml
 - version: v1alpha1
@@ -86,7 +86,10 @@ Open the directory using any editor.
   
 The watches.yaml file connects the SessionWebAppOperator resource to the sessionwebappoperator ansible role.
 
-5. Open the roles/sessionwebappoperator/tasks/main.yml file and update as follows.
+
+**5. Update main.yaml**
+
+Open the roles/sessionwebappoperator/tasks/main.yml file and update as follows.
 
 ```yaml
 - name: start sessionwebappoperator app
@@ -136,7 +139,7 @@ The watches.yaml file connects the SessionWebAppOperator resource to the session
 
 ```
 
-6. Edit the cache_v1alpha1_sessionwebappoperator.yaml
+**6. Edit the cache_v1alpha1_sessionwebappoperator.yaml**
 
 ```yaml
 apiVersion: cache.hub.docker.com/v1alpha1
@@ -147,7 +150,7 @@ spec:
   env1: "TestEnvironment1"
 ```
 
-7. Edit the Makefile
+**7. Edit the Makefile**
 
 ```yaml
 Image URL to use all building/pushing image targets
@@ -158,7 +161,7 @@ to
 IMG ?= centraltechhub/operators:v1 # Replace this value with the relevant docker repository and version
 ```
 
-8. Edit the role.yaml file under config/rbac.
+**8. Edit the role.yaml file under config/rbac.**
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -202,7 +205,7 @@ rules:
       - watch
 ```
 
-9.  Building the docker images and pushing it to the respository
+**9.  Building the docker images and pushing it to the respository**
 
 Ensure to save all the files. Execute the following command from the project directory.
 
@@ -214,7 +217,7 @@ If the build is successful, you will be able to see the image present in the doc
 
 ![image](https://user-images.githubusercontent.com/93929892/204740313-439a161c-346e-4fc3-b06a-9067efcdc545.png)
 
-10. Generate the operator install yaml file. 
+**10. Generate the operator install yaml file.** 
 
 Execute the following command:
 
@@ -233,7 +236,7 @@ image: centraltechhub/operators:v1
 
 save the file and exit.
 
-11. Install the operator.
+**11. Install the operator.**
 
 Navigate to the operator root directory and execute the following command:
 
@@ -250,7 +253,7 @@ check if the operator is running.
 <img width="1534" alt="image" src="https://user-images.githubusercontent.com/93929892/204742157-dacc8d3d-ae88-4f30-9ae8-b8e64bbd6f39.png">
 
 
-12. Install the sessionwebapp application container.
+**12. Install the sessionwebapp application container.**
 
 Execute the following command:
 
@@ -268,7 +271,7 @@ make deploy
 ```
 
 
-13. Start Minikube tunnel
+**13. Start Minikube tunnel**
 
 In a new command prompt, execute
 
@@ -280,7 +283,7 @@ Post which external-ip will be assigned to the service.
 
 <img width="1571" alt="image" src="https://user-images.githubusercontent.com/93929892/204756027-69792a88-0619-4105-9373-852b5eac6c13.png">
 
-14. Open browser and navigate http://localhost/sessionwebapp/ServerDetails.html
+**14. Open browser and navigate http://localhost/sessionwebapp/ServerDetails.html**
 
 ![image](https://user-images.githubusercontent.com/93929892/204756370-e46d2b45-6072-4edf-9ce8-d482ec7faef7.png)
 
