@@ -48,13 +48,14 @@ Sample review of a particular kind.
 
 Execute the following command:
 ```CMD
-mkdir libertyapp-operator  
-cd libertyapp-operator  
+mkdir sessionwebapp-operator  
+cd sessionwebapp-operator  
 operator-sdk init --plugins=ansible --domain hub.docker.com
 ```
 
 output:
-![image](https://user-images.githubusercontent.com/93929892/196857036-f68cda14-6f65-46e2-b9c2-64eb5b43d9ee.png)
+<img width="1317" alt="image" src="https://user-images.githubusercontent.com/93929892/204734366-9ae63f8d-95fa-46ce-a684-a40598b0b42d.png">
+
 
 The initialization command will create the neccessary template and artifacts under the liberty-operator directory. 
 
@@ -62,31 +63,33 @@ Create a LibertyApp API.
 
 Execute the following command:
 ```CMD
-operator-sdk create api --group cache --version v1alpha1 --kind LibertyAppOperator --generate-role
+operator-sdk create api --group cache --version v1alpha1 --kind SessionWebAppOperator --generate-role
 ```
 
 output:
-![image](https://user-images.githubusercontent.com/93929892/196858296-61d700d3-78fa-47b2-85cc-d1fee5ac2f3d.png)
+<img width="1595" alt="image" src="https://user-images.githubusercontent.com/93929892/204734650-e49e3cf0-d198-4de0-9c19-2f15d02104a8.png">
+
 
 Open the directory using any editor.
 
-<img width="546" alt="image" src="https://user-images.githubusercontent.com/93929892/196858434-7e6dbb10-1fce-4b33-b1bb-af9d8cec27bf.png">
+<img width="338" alt="image" src="https://user-images.githubusercontent.com/93929892/204735036-9ce0356a-af63-4e3a-93bf-0c7cbf342948.png">
+
 
 4. Reviewing the watches.yaml
 
 ```yaml
 - version: v1alpha1
-  group: cache.centraltechhub.com
-  kind: LibertyInstall
-  role: libertyinstall
+  group: cache.hub.docker.com
+  kind: SessionWebAppOperator
+  role: sessionwebappoperator
 ```
   
 The watches.yaml file connects the LibertyAppOperator resource to the libertyappoperator ansible role.
 
-5. Open the roles/libertyappoperator/tasks/main.yml file and update as follows.
+5. Open the roles/sessionwebappoperator/tasks/main.yml file and update as follows.
 
 ```yaml
-- name: start libertyappoperator app
+- name: start sessionwebappoperator app
   kubernetes.core.k8s:
     definition:
       kind: Deployment
@@ -106,14 +109,14 @@ The watches.yaml file connects the LibertyAppOperator resource to the libertyapp
           spec:
             containers:
             - name: webapp
-              image: "docker.io/centraltechhub/sessionwebapp:V2"
+              image: "docker.io/centraltechhub/sessionwebapp:v1"
               env:
                 - name: ENV1
                   value: "{{env1}}"
               ports:
                 - containerPort: 9080
 
-- name: start libertyappoperator service
+- name: start sessionwebappoperator service
   kubernetes.core.k8s:
     definition:
       kind: Service
@@ -137,11 +140,11 @@ The watches.yaml file connects the LibertyAppOperator resource to the libertyapp
 
 ```yaml
 apiVersion: cache.hub.docker.com/v1alpha1
-kind: LibertyAppOperator
+kind: SessionWebAppOperator
 metadata:
-  name: libertyappoperator-sample
+  name: sessionwebappoperator-sample
 spec:
-  env1: "Hello World"
+  env1: "TestEnvironment1"
 ```
 
 7. Edit the Makefile
@@ -152,7 +155,7 @@ IMG ?= controller:latest
 ```
 to 
 ```yaml
-IMG ?= centraltechhub/operators:V1
+IMG ?= centraltechhub/operators:v1
 ```
 
 8.  Building the docker images and pushing it to the respository
