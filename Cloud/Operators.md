@@ -158,6 +158,50 @@ to
 IMG ?= centraltechhub/operators:v1 # Replace this value with the relevant docker repository and version
 ```
 
+8. Edit the role.yaml file under config/rbac.
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+  ##
+  ## Base operator rules
+  ##
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+      - pods
+      - pods/exec
+      - pods/log
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+      - daemonsets
+      - replicasets
+      - statefulsets
+      - services
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+```
+
 8.  Building the docker images and pushing it to the respository
 
 Ensure to save all the files. Execute the following command from the project directory.
