@@ -289,5 +289,36 @@ Post which external-ip will be assigned to the service.
 
 ![image](https://user-images.githubusercontent.com/93929892/204756370-e46d2b45-6072-4edf-9ce8-d482ec7faef7.png)
 
+**15. Addtional testing.**
+
+Login into the container using the following command (copy the right container name):
+
+```CMD
+kubectl exec -it webapp-deployment-d76bb8f96-c2hn8 bash
+```
+run the following command:
+```CMD
+echo $ENV1
+```
+The following will be printed: TestEnvironment1
+
+Modify config/samples/cache_v1alpha1_sessionwebappoperator.yaml. Set env1: "TestEnvironment2".
+
+Run the following:
+```CMD
+kubectl apply -f config/samples/cache_v1alpha1_sessionwebappoperator.yaml
+```
+
+Login into the container using the following command (copy the right container name):
+
+```CMD
+kubectl exec -it webapp-deployment-d76bb8f96-c2hn8 bash
+```
+run the following command:
+```CMD
+echo $ENV1
+```
+The following will be printed: TestEnvironment2
+
 The End. Happy Learning !!
 
