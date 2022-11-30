@@ -278,6 +278,8 @@ In a new command prompt, execute
 ```CMD
 minikube tunnel
 ```
+<img width="1333" alt="image" src="https://user-images.githubusercontent.com/93929892/204774482-c25f803f-92bf-49e9-9573-e22f0f48ed1c.png">
+
 
 Post which external-ip will be assigned to the service.
 
