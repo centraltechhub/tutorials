@@ -312,7 +312,7 @@ kubectl apply -f config/samples/cache_v1alpha1_sessionwebappoperator.yaml
 Login into the container using the following command (copy the right container name):
 
 ```CMD
-kubectl exec -it webapp-deployment-d76bb8f96-c2hn8 bash
+kubectl exec -it webapp-deployment-59c684c549-6c984 bash
 ```
 run the following command:
 ```CMD
