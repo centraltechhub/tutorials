@@ -136,7 +136,7 @@ The watches.yaml file connects the SessionWebAppOperator resource to the session
 
 ```
 
-6. Edit the cache_v1alpha1_libertyinstall.yaml
+6. Edit the cache_v1alpha1_sessionwebappoperator.yaml
 
 ```yaml
 apiVersion: cache.hub.docker.com/v1alpha1
