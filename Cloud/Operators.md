@@ -8,6 +8,7 @@
 * Operators are software extension to Kubernetes that make use of custom resources to manage applications and their components. Minikube is installed to mimic Kubernetes environment to install and test the operator.
 * Helm, Ansible or Go can be used as Operator SDK. Ansible is used in this tutorial.
 * A demo web application is already built and containeraized. The image is available in centraltechhub/sessionwebapp:v1. Users are free to make use of this container image or use one of their own.
+* The aim of this document is only to show a demo on how to build a simple operator, not to teach the theoretical concept of Operator or it's related technology. To learn more about operators, refer to the official site: https://kubernetes.io/docs/concepts/extend-kubernetes/operator/
  
 
 
