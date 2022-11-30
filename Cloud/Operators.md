@@ -261,6 +261,13 @@ Check if both the pod and service is deployed sucessfully.
 
 <img width="1558" alt="image" src="https://user-images.githubusercontent.com/93929892/204755444-5e7b4bff-2d14-44ba-9370-6a3cc6314f12.png">
 
+Execute
+
+```CMD
+make deploy
+```
+
+
 13. Start Minikube tunnel
 
 In a new command prompt, execute
