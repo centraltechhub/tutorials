@@ -57,9 +57,9 @@ output:
 <img width="1317" alt="image" src="https://user-images.githubusercontent.com/93929892/204734366-9ae63f8d-95fa-46ce-a684-a40598b0b42d.png">
 
 
-The initialization command will create the neccessary template and artifacts under the liberty-operator directory. 
+The initialization command will create the neccessary template and artifacts under the sessionwebapp-operator directory. 
 
-Create a LibertyApp API.
+Create a SessionWebAppOperator API.
 
 Execute the following command:
 ```CMD
@@ -84,7 +84,7 @@ Open the directory using any editor.
   role: sessionwebappoperator
 ```
   
-The watches.yaml file connects the LibertyAppOperator resource to the libertyappoperator ansible role.
+The watches.yaml file connects the SessionWebAppOperator resource to the sessionwebappoperator ansible role.
 
 5. Open the roles/sessionwebappoperator/tasks/main.yml file and update as follows.
 
