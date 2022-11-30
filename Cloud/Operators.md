@@ -176,6 +176,7 @@ rules:
       - pods
       - pods/exec
       - pods/log
+      - services
     verbs:
       - create
       - delete
@@ -191,7 +192,6 @@ rules:
       - daemonsets
       - replicasets
       - statefulsets
-      - services
     verbs:
       - create
       - delete
