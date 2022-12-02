@@ -1,4 +1,0 @@
-
-**Install 3rd Party Jars**
-
-./install3rdParty.sh yfsextn 1_0 –j  <path>/UserExitImplementation.jar -targetJVM EVERY
