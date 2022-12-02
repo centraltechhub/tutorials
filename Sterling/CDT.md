@@ -81,3 +81,4 @@ export TARGET_PASSWORD
 ${JAVA} ${HEAP_FLAGS} -classpath &JAR_DIR;/bootstrapper.jar:&INSTALL_DIR;\resources\ydkresources -Xms4096m -Xmx4096m -Dvendor=shell -DvendorFile=&PROP_DIR;/servers.properties -DUseEntitiesFromClasspath=Y -DDISABLE_DS_EXTENSIONS=Y -DDISABLE_EXTENSIONS=Y -DYFS_HOME=&HOME_DIR; com.sterlingcommerce.woodstock.noapp.NoAppLoader -class com.yantra.tools.ydk.config.ConfigDeployMain -p &HOME_DIR;/resources/ydkresources -f &PROP_DIR;/dynamicclasspath.cfg -invokeargs ${CDT_ARGS} "$@" 2>&1 | tee &LOG_DIR;/cdtshell.${dstamp}.log
 exit ${PIPESTATUS[0]}
 ```
+4. Run ./setupfiles.sh
