@@ -52,3 +52,10 @@ Any other server specific settings can be made in the server.xml file.
 ```CMD
 ./om-compose.sh setup
 ```
+
+7. Once installation is successful, following message will be displayed.
+
+![image](https://user-images.githubusercontent.com/93929892/211502438-58a50395-f127-47ab-b28b-b1a622a2262b.png)
+
+
+You can then access the call center and check: http://localhost:9080/isccsdev/isccs/login.do
