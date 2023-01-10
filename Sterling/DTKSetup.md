@@ -47,3 +47,8 @@ In this example, I am using the following:
 
 Any other server specific settings can be made in the server.xml file.
 
+6. Navigate to `/devtoolkit_docker/compose and run the following command:
+
+```CMD
+./om-compose.sh setup
+```
