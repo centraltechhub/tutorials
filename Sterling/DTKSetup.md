@@ -20,3 +20,30 @@ IV_ENABLE=N
 HOST_OS=mac
 JAVA_HOME=/Users/hussamoa/Techhub/DTK/jdk
 ```
+4. Copy your base Operating system compatible JDK to the location configured in the JAVA_HOME property in the previous step.
+
+In this example, I am using the following:
+
+![image](https://user-images.githubusercontent.com/93929892/211471281-05693b79-7f41-4a35-8878-c7cc5e11f211.png)
+
+5. Navigate to `/devtoolkit_docker/compose/docker/appserver and update the jvm.options as follows:
+
+```PROP
+-Dvendor=shell
+-DvendorFile=servers.properties
+-Xms4096m
+-Xmx4096m
+-Dhttps.protocols=TLSv1.2
+-Dcom.ibm.jsse2.overrideDefaultTLS=true
+-Djavax.net.ssl.keyStore=/var/oms/keystore/key.jks
+-Djavax.net.ssl.keyStorePassword=secret4ever
+-Djavax.net.ssl.trustStore=/var/oms/keystore/key.jks
+-Djavax.net.ssl.trustStorePassword=secret4ever
+-Xdebug
+-Xrunjdwp:transport=dt_socket,server=y,address=8383,suspend=n
+-Dlog4j2.disable.jmx=true
+-DuiExtensibilityMode=true
+```
+
+Any other server specific settings can be made in the server.xml file.
+
