@@ -8,7 +8,7 @@
 
 3. Navigate to compose directory. Make a copy of om-compose.properties.sample to om-compose.properties. Add the following configuration:
 
-'''PROP
+```PROP
 DTK_LICENSE=accept
 OM_INSTALL_LOCALIZATION=true
 OM_LOCALES=zh_CN,zh_TW,fr_FR,ja_JP,pt_BR,ko_KR,ru_RU,tr_TR,it_IT,es_ES,de_DE,pl_PL
@@ -19,4 +19,4 @@ SIM_IV_ENABLE=N
 IV_ENABLE=N
 HOST_OS=mac
 JAVA_HOME=/Users/hussamoa/Techhub/DTK/jdk
-'''
+```
